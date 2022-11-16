@@ -1,0 +1,29 @@
+version: 2
+exposures:
+  - name: example_domain__full_flow_scheduling
+    type: application
+    owner:
+      name: test_user
+      email: test@yotpo.com
+    description: test description
+    maturity: low
+    url: https://airflow-data-applications.k8s.yotpo.xyz/graph?dag_id=test_full_flow_domain__full_flow_scheduling
+    tags:
+      - example_domain
+      - yoda_scheduling
+    depends_on:
+      - ref('example_domain__store_profile_segment')
+      - ref('example_domain_stg__daily_model_a')
+      - ref('example_domain_stg__daily_model_b')
+      - ref('example_domain_stg__daily_model_c')
+      - ref('example_domain_stg__my_first_dbt_model')
+      - ref('example_domain_stg__my_second_dbt_model')
+      - ref('example_domain_stg__model_a')
+      - ref('example_domain_stg__model_b')
+      - ref('example_domain_stg__model_c')
+
+    meta:
+      scheduling:
+        schedule: '@daily'
+        start_date: '2022-07-21'
+        product_line: All

@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "dbt-accelerator"
+version = "0.1.0"
+description = "DBT Cli to Accelerate your work"
+authors = ["Chaim Turkel <cyturel@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+packages = [{include = "dbt_accelerator"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rich-click = "^1.5.2"
+click-plugins = "^1.1.1"
+click = "^8.1.3"
+prompt-toolkit = "^3.0.32"
+click-repl = "^0.2.0"
+click-log = "^0.4.0"
+pre-commit = "^2.20.0"
+gitpython = "^3.1.29"
+mashumaro = "^3.1"
+asn1crypto = "^1.5.1"
+snowflake-connector-python = "^2.8.1"
+
+[tool.poetry.dev-dependencies]
+flake8-black = "^0.2.3"
+isort = "^5.10.1"
+pytest = "^5.2"
+flake8 = "^4.0.1"
+tox = "^3.24.4"
+coverage = "^6.0.2"
+pytest-mock = "^3.6.1"
+pytest-cov = "^3.0.0"
+mockito = "^1.3.0"
+pytest-mockito = "^0.0.4"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_glob = [ "docs", "notes" ]
+skip="__pycache__"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dbt_accelerator = 'dbt_accelerator.click.cli:loop_repl'
+dbt_accelerator_validate = 'dbt_accelerator.validate_hook:main'

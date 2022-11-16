@@ -1,0 +1,76 @@
+version: 2
+models:
+  - name: example_domain__fact_store_profile_daily
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: app_key
+        description: '{{ doc("example_domain__fact_store_profile_daily_app_key") }}'
+        type: string
+        tests: []
+      - name: ref_time
+        description: '{{ doc("example_domain__fact_store_profile_daily_ref_time") }}'
+        type: string
+        tests: []
+      - name: points_sum
+        description: '{{ doc("example_domain__fact_store_profile_daily_points_sum") }}'
+        type: bigint
+        tests: []
+        meta:
+          looker:
+            measures:
+              sum_points_measure:
+                name: sum_points_measure
+                type: sum
+                value_format_name: decimal_0
+              avg_points_measure:
+                name: avg_points_measure
+                type: average
+                value_format_name: decimal_0
+      - name: lines_count
+        description: '{{ doc("example_domain__fact_store_profile_daily_lines_count") }}'
+        type: bigint
+        tests: []
+        meta:
+          looker:
+            measures:
+              sum_lines_measure:
+                name: sum_lines_measure
+                type: sum
+                value_format_name: decimal_0
+              avg_lines_measure:
+                name: avg_lines_measure
+                type: average
+                value_format_name: decimal_0
+      - name: arrow_avg
+        description: '{{ doc("example_domain__fact_store_profile_daily_arrow_avg") }}'
+        type: double
+        tests: []
+        meta:
+          looker:
+            measures:
+              sum_arrow_avg_measure:
+                name: sum_arrow_avg_measure
+                type: sum
+                value_format_name: decimal_0
+              avg_arrow_avg_measure:
+                name: avg_arrow_avg_measure
+                type: average
+                value_format_name: decimal_0
+      - name: date
+        description: '{{ doc("example_domain_stg__fact_store_profile_daily_date") }}'
+        type: date
+        tests: []
+    model_path: models/example_domain/marts
+    meta:
+      model_ownership:
+        group: koalas
+        team: koalas
+        created_by: cturkel@yotpo.com
+        alert_channels:
+          - test
+      primary-key: app_key, ref_time
+    tests: []
+metrics: []

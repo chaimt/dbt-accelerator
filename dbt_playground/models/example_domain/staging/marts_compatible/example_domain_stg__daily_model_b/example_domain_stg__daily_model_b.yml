@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: example_domain_stg__daily_model_b
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: id_key
+        description: '{{ doc("example_domain_stg__daily_model_b_id_key") }}'
+        type: string
+        tests: []
+      - name: ref_time
+        description: '{{ doc("example_domain_stg__daily_model_b_ref_time") }}'
+        type: string
+        tests: []
+      - name: lines_count
+        description: '{{ doc("example_domain_stg__daily_model_b_lines_count") }}'
+        type: bigint
+        tests: []
+        meta:
+          yoda_metric:
+            type: count distinct
+      - name: time_id
+        description: '{{ doc("example_domain_stg__daily_model_b_time_id") }}'
+        type: string
+        tests: []
+    model_path: models/example_domain/staging/marts_compatible
+    meta:
+      model_ownership:
+        group: bi
+        team: bi-dev
+        created_by: cturkel@yotpo.com
+    tests: []
+metrics: []

@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: example_domain_stg__model_b
+    description: example_domain__stg__model_b
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: id_key
+        description: '{{ doc("example_domain_stg__model_b_id_key") }}'
+        type: string
+        tests: []
+      - name: ref_time
+        description: '{{ doc("example_domain_stg__model_b_ref_time") }}'
+        type: string
+        tests: []
+      - name: lines
+        description: '{{ doc("example_domain_stg__model_b_lines") }}'
+        type: int
+        tests: []
+    model_path: models/example_domain/staging/base
+    meta: {}
+    tests: []
+metrics: []

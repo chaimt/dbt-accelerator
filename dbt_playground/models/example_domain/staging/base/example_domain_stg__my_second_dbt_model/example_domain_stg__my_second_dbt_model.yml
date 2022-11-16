@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: example_domain_stg__my_second_dbt_model
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: id
+        description: The primary key for this table
+        type: int
+        tests:
+          - unique
+          - not_null
+    model_path: models/example_domain/staging/base
+    meta:
+      model_ownership:
+        group: bi
+        team: bi-dev
+        created_by: sromano@yotpo.com
+      primary-key: purchase_id
+    tests: []
+metrics: []

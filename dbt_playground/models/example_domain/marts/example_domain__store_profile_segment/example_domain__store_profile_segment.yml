@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: example_domain__store_profile_segment
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: userId
+        description: '{{ doc("example_domain__store_profile_segment_userId") }}'
+        type: string
+        tests: []
+      - name: points
+        description: '{{ doc("example_domain__store_profile_segment_points") }}'
+        type: int
+        tests: []
+      - name: lines
+        description: '{{ doc("example_domain__store_profile_segment_lines") }}'
+        type: int
+        tests: []
+      - name: arrow
+        description: '{{ doc("example_domain__store_profile_segment_arrow") }}'
+        type: int
+        tests: []
+      - name: smsbump_cs_tools_count
+        description: '{{ doc("example_domain__store_profile_segment_smsbumpCsToolsCount") }}'
+        type: string
+        tests: []
+    model_path: models/example_domain/marts
+    meta:
+      model_ownership:
+        group: koalas
+        team: koalas
+        created_by: cturkel@yotpo.com
+        alert_channels:
+          - test
+      primary-key: userId
+    tests: []
+metrics: []

@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: example_domain_stg__daily_model_a
+    description: Loyalty Stores Profile
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: app_key
+        description: '{{ doc("example_domain_stg__daily_model_a_app_key") }}'
+        type: string
+        tests: []
+      - name: a_time
+        description: '{{ doc("example_domain_stg__daily_model_a_a_time") }}'
+        type: string
+        tests: []
+      - name: points_sum
+        description: '{{ doc("example_domain_stg__daily_model_a_points_sum") }}'
+        type: bigint
+        tests: []
+        meta:
+          yoda_metric:
+            type: sum
+      - name: time_id
+        description: '{{ doc("example_domain_stg__daily_model_a_time_id") }}'
+        type: string
+        tests: []
+    model_path: models/loyalty/marts
+    meta:
+      model_ownership:
+        group: bi
+        team: bi-dev
+        created_by: cturkel@yotpo.com
+    tests: []
+metrics: []

@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: example_domain_stg__my_first_dbt_model
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+        - test
+    columns:
+      - name: id
+        description: '{{ doc("example_domain_stg__my_first_dbt_model_id") }}'
+        type: int
+        tests: []
+    model_path: models/example_domain
+    meta:
+      model_ownership:
+        group: bi
+        team: bi-dev
+        created_by: sromano@yotpo.com
+      primary-key: campaign_id
+      foreign-keys:
+        - foreign-key: redemption_option_id__swell_redemption_options
+          ref-table: swell_redemption_options
+          ref-key: id
+          ref-relationship: many-to-one
+        - foreign-key: vip_tier_id__swell_vip_tiers
+          ref-table: swell_vip_tiers
+          ref-key: id
+          ref-relationship: many-to-one
+    tests:
+      - dbt_expectations.expect_table_column_count_to_be_between:
+          min_value: 1
+
+metrics:
+  - name: daily_purchase
+    description: The daily purchases per store
+    label: Store Daily Purchases
+    model: ref('example_domain_stg__my_first_dbt_model')
+    type: count
+    sql: count_purchases
+    timestamp: purchase_date
+    time_grains:
+      - day
+    dimensions:
+      - app_key
+    filters: []

@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: example_domain_stg__model_c
+    description: example_domain__stg__model_c
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: id
+        description: '{{ doc("example_domain_stg__model_c_id") }}'
+        type: string
+        tests: []
+      - name: run_time
+        description: '{{ doc("example_domain_stg__model_c_run_time") }}'
+        type: string
+        tests: []
+      - name: arrow
+        description: '{{ doc("example_domain_stg__model_c_arrow") }}'
+        type: int
+        tests: []
+    model_path: models/example_domain/staging/base
+    meta: {}
+    tests: []
+metrics: []

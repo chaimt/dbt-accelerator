@@ -1,0 +1,58 @@
+# python
+*.egg-info/
+*.egg
+eggs/
+.eggs/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# dbt
+target/
+dbt_modules/
+!dbt_addon/dbt_modules
+dbt_packages/
+!dbt_addon/dbt_packages
+selectors.yml
+
+# vs code
+.lh
+.vscode
+workspace.code-workspace
+
+# jetbrains
+.idea
+generate-fake-dbdata/db
+*iml
+
+# misc
+logs/
+.user.yml
+.DS_Store
+
+.history
+
+run.log
+
+site/
+# poetry dist
+dist
+./docs
+./models

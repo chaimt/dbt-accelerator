@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: example_domain__default
+    description: '{{ doc("example_domain__test_model") }}'
+    schema: default
+    config:
+      tags:
+        - example_domain    
+    tables:
+      - name: swell_yotpo_platform_accounts
+        description: Mapping table that is used to map a merchant to store
+        columns:
+          - name: merchant_id
+            tests:
+              - not_null
+              - unique
+          - name: app_key
+            tests:
+              - not_null
+              - unique
+

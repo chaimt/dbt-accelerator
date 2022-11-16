@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: example_domain_stg__daily_model_c
+    description: A starter dbt model
+    config:
+      tags:
+        - example_domain
+    columns:
+      - name: id
+        description: '{{ doc("example_domain_stg__daily_model_c_id") }}'
+        type: string
+        tests: []
+      - name: run_time
+        description: '{{ doc("example_domain_stg__daily_model_c_run_time") }}'
+        type: string
+        tests: []
+      - name: arrow_avg
+        description: '{{ doc("example_domain_stg__daily_model_c_arrow_avg") }}'
+        type: double
+        tests: []
+        meta:
+          yoda_metric:
+            type: average
+      - name: time_id
+        description: '{{ doc("example_domain_stg__daily_model_c_time_id") }}'
+        type: string
+        tests: []
+    model_path: models/example_domain/staging/marts_compatible
+    meta:
+      model_ownership:
+        group: bi
+        team: bi-dev
+        created_by: cturkel@yotpo.com
+    tests: []
+metrics: []
