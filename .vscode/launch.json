@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "Python: CLI playground",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "program": "${workspaceFolder}/dbt_accelerator/click/cli.py",
+            "args": [
+                "repl"
+            ],
+            "justMyCode" : false,
+            "console": "integratedTerminal",
+            "env": { "PYTHONPATH": "${workspaceRoot}:${workspaceRoot}/venv", "ADVANCED_MODE": "True", "RESOURCES_DIR": "${workspaceFolder}/docker/resources"},
+            "cwd": "${workspaceFolder}/dbt_playground"
+        }        
+    ]
+}
