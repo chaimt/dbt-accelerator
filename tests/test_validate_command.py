@@ -217,7 +217,10 @@ def test_invalid_model_path_plugin(caplog):
     start/models/platform/staging/marts_compatible/platform_stg__stores_enrichment.sql,
     models/platform/staging/base/platform_stg__stores.yml"""
     assert not ValidateCommand().validate_files(filenames, [ModelNameValidatePlugin()])
-    assert "[ModelNameValidatePlugin] invalid file name start/models/platform/staging/marts_compatible/platform_stg__stores_enrichment.yml" in caplog.text
+    assert (
+        "[ModelNameValidatePlugin] invalid file name start/models/platform/staging/marts_compatible/platform_stg__stores_enrichment.yml"
+        in caplog.text
+    )
 
 
 def test_invalid_model_type_path_plugin(caplog):
@@ -233,4 +236,7 @@ def test_model_name_invalid_name_plugin(caplog):
     models/platform/staging/marts_compatible/platform__stores_enrichment.sql,
     models/platform/staging/base/platform__stores.yml"""
     assert not ValidateCommand().validate_files(filenames, [ModelNameValidatePlugin()])
-    assert "Model models/platform/staging/marts_compatible/platform__stores_enrichment.sql name is not according to convention [domain_type__]." in caplog.text
+    assert (
+        "Model models/platform/staging/marts_compatible/platform__stores_enrichment.sql name is not according to convention [domain_type__]."
+        in caplog.text
+    )

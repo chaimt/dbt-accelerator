@@ -19,7 +19,7 @@ models:
         type: bigint
         tests: []
         meta:
-          yoda_metric:
+          metric:
             type: sum
       - name: time_id
         description: '{{ doc("example_domain_stg__daily_model_a_time_id") }}'
@@ -30,6 +30,6 @@ models:
       model_ownership:
         group: bi
         team: bi-dev
-        created_by: cturkel@yotpo.com
+        created_by: cturkel@company.com
     tests: []
 metrics: []

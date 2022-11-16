@@ -19,7 +19,6 @@ from dbt_accelerator.click.warehouse import CLI_WAREHOUSE_COMMAND_GROUPS, wareho
 from dbt_accelerator.companion.constant import PERSIST_FOLDER
 from dbt_accelerator.companion.utils import FileHelper
 
-
 # Use Rich markup
 click.rich_click.USE_RICH_MARKUP = True
 

@@ -16,7 +16,7 @@ models:
       model_ownership:
         group: bi
         team: bi-dev
-        created_by: sromano@yotpo.com
+        created_by: sromano@company.com
       primary-key: campaign_id
       foreign-keys:
         - foreign-key: redemption_option_id__swell_redemption_options

@@ -1,9 +1,10 @@
 import logging
+import os
 
 import snowflake.connector
 
 from dbt_accelerator.companion.common_companion import CompanionBase
-import os
+
 logger = logging.getLogger(__name__)
 
 

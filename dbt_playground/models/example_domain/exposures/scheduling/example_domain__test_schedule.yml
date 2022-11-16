@@ -4,13 +4,13 @@ exposures:
     type: application
     owner:
       name: test_user
-      email: test@yotpo.com
+      email: test@company.com
     description: test description
     maturity: low
-    url: https://airflow-data-applications.k8s.yotpo.xyz/graph?dag_id=test_full_flow_domain__full_flow_scheduling
+    url: https://airflow-data-applications.k8s.company.xyz/graph?dag_id=test_full_flow_domain__full_flow_scheduling
     tags:
       - example_domain
-      - yoda_scheduling
+      - scheduling
     depends_on:
       - ref('example_domain__store_profile_segment')
       - ref('example_domain_stg__daily_model_a')

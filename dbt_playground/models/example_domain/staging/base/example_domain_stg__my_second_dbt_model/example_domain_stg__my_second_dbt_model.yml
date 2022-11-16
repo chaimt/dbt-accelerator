@@ -17,7 +17,7 @@ models:
       model_ownership:
         group: bi
         team: bi-dev
-        created_by: sromano@yotpo.com
+        created_by: sromano@company.com
       primary-key: purchase_id
     tests: []
 metrics: []

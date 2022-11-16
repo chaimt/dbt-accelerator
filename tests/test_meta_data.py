@@ -60,9 +60,7 @@ def test_get_model_filename_prefix():
 @patch("dbt_accelerator.companion.utils.ExecutionHelper.get_root_dir", mock_get_root_dir)
 def test_get_model_source_filename():
     domain_resource_location = DomainResourceLocation("example_domain")
-    assert domain_resource_location.get_model_source_filename(True).endswith(
-        "dbt_playground/models/example_domain/source/example_domain__src.yml"
-    )
+    assert domain_resource_location.get_model_source_filename(True).endswith("dbt_playground/models/example_domain/source/example_domain__src.yml")
     assert domain_resource_location.get_model_source_filename(False) == "example_domain__src.yml"
 
 

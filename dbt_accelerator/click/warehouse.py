@@ -16,7 +16,7 @@ CLI_WAREHOUSE_COMMAND_GROUPS = [
 ]
 
 
-@click.command(help="Set up warehouse database for a new Yoda user")
+@click.command(help="Set up warehouse database for a new user")
 @wrap_action("Set up warehouse database for a new user")
 def setup_user_database() -> None:
     """Set up warehouse database for a new user"""

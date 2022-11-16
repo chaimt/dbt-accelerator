@@ -68,7 +68,7 @@ models:
       model_ownership:
         group: koalas
         team: koalas
-        created_by: cturkel@yotpo.com
+        created_by: cturkel@company.com
         alert_channels:
           - test
       primary-key: app_key, ref_time

@@ -8,7 +8,7 @@ sources:
       tags:
         - example_domain    
     tables:
-      - name: swell_yotpo_platform_accounts
+      - name: swell_company_platform_accounts
         description: Mapping table that is used to map a merchant to store
         columns:
           - name: merchant_id
